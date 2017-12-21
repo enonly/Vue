@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="..\node_modules\bootstrap\dist\css\bootstrap.css">
+</head>
+<body>
+    <div class="nav-bar">顶部栏</div>
+    <div class="row">
+        <div class="col-md-4" id="menu" >left</div>
+        <div class="col-md-8">right</div>
+    </div>
+
+
+    <script src="..\node_modules\jquery\dist\jquery.js"></script>
+    <script src="..\node_modules\bootstrap\dist\js\bootstrap.js"></script>
+
+    <script>
+    $.ajax({
+        url: 'http://localhost:1545/menu/index',
+        type: 'GET', //GET
+        timeout: 10000,    //超时时间
+        dataType: 'jsonp',    //返回的数据格式：json/xmlml/script/jsonp/text
+        success: function (data, textStatus, jqXHR) {
+          console.log(data);
+        },
+        error: function (xhr, textStatus,c) {
+          console.log(xhr);
+          console.log(xhr.responseText);
+          console.log(textStatus);
+          console.log(c);
+        }
+      })
+    </script>
+</body>
+</html>
